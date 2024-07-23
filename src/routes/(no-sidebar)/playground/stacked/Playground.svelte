@@ -1,6 +1,8 @@
 <script>
 	import { Breadcrumb, BreadcrumbItem, Heading } from 'flowbite-svelte';
 	import EmptyCard from './EmptyCard.svelte';
+	import { Card, Dropdown, DropdownItem, Avatar, Button } from 'flowbite-svelte';
+	import { DotsHorizontalOutline } from 'flowbite-svelte-icons';
 </script>
 
 <main>
@@ -11,22 +13,26 @@
 				<BreadcrumbItem href="/">Pages</BreadcrumbItem>
 				<BreadcrumbItem>Playground</BreadcrumbItem>
 			</Breadcrumb>
-			<Heading tag="h1" class="text-xl font-semibold sm:text-2xl">
-				Create something awesome here
-			</Heading>
+			
 		</div>
+		
 		<div class="col-span-full xl:col-auto">
-			<EmptyCard size="xl" class="mb-4 h-80 w-full space-y-6 2xl:col-span-2"></EmptyCard>
-			<EmptyCard size="xl" class="mb-4 h-80 w-full space-y-6 2xl:col-span-2"></EmptyCard>
+			<Card size="xl" class="mb-4 h-80 w-full space-y-6 2xl:col-span-2" >
+				<div class="flex flex-col items-center pb-4">
+				  <Avatar size="xl" class="mb-7" src="/images/my-logo.png" />
+				  <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Vasily Prokhozhev</h5>
+				  <span class="text-sm text-gray-500 dark:text-gray-400">Aspiring software developer</span>
+				  <div class="flex mt-4 space-x-3 rtl:space-x-reverse lg:mt-6">
+				  </div>
+				</div>
+			  </Card>
 		</div>
+
 		<div class="col-span-2">
 			<EmptyCard size="none" class="mb-4 h-80 w-full space-y-6"></EmptyCard>
 			<EmptyCard size="none" class="mb-4 h-80 w-full space-y-6"></EmptyCard>
 		</div>
 	</div>
-	<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-		{#each Array(4) as _, i}
-			<EmptyCard size="xl" class="h-60 w-full space-y-6 sm:p-6"></EmptyCard>
-		{/each}
-	</div>
+
 </main>
+
